@@ -5,47 +5,31 @@ int main(){
     scanf("%d",&n);
     int i, j, k;
  
-    // print upper half
-    for (i = 1; i <= n; i++)
-    {
-        // print '*'
-        for (j = 1; j <= n + 1 - i; j++) {
+    for (i=0;i<n;i++){
+        for (j=0;j<n-i;j++){
             printf(" * ");
         }
- 
-        // print space
-        for (k = 1; k < (2*i - 1); k++) {
+        for (j=0;j<2*i;j++){
             printf("   ");
         }
- 
-        // print '*'
-        for (j = 1; j <= n + 1 - i; j++) {
+        for(j=0;j<n-i;j++){
             printf(" * ");
         }
- 
-        printf("\n");
+        (i==n-1) ? NULL: printf("\n");
     }
- 
-    // print lower half
-    for (i = n - 1; i >= 1; i--)
-    {
-        // print '*'
-        for (j = n; j >= i; j--) {
+    
+    for (i=0;i<=n;i++){
+        for (j=0;j<i;j++){
             printf(" * ");
         }
- 
-        // print space
-        for (k = 1; k < (2*i - 1); k++) {
+        for (k=0;k<2*(n-i);k++){
             printf("   ");
         }
- 
-        // print '*'
-        for (j = n; j >= i; j--) {
+        for (j=0;j<i;j++){
             printf(" * ");
         }
- 
         printf("\n");
     }
- 
+
     return 0;
 }

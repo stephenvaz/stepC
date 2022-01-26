@@ -1,8 +1,6 @@
 #include<stdio.h>
 #include<math.h>
-#include<stdlib.h>
 int main(){
-    
     int n;
     int sum = 0;
     scanf("%d",&n);
