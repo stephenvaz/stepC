@@ -14,3 +14,4 @@ int main(){
     (areAmicable(a)==b && areAmicable(b)==a) ? printf("Amicable") : printf("Not Amicable");
 }
 
+//(220, 284)
