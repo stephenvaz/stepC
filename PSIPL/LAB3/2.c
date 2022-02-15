@@ -1,7 +1,7 @@
 #include<stdio.h>
 int areAmicable(int n){
     int sum = 0;
-    printf("Prime Divisors of %d are: ", n);
+    printf("Divisors of %d are: ", n);
     for (int i = 1; i < n; i++){
         if (n % i == 0){
             printf("%d +", i);

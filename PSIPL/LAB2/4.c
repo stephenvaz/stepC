@@ -9,3 +9,4 @@ int main(){
     int p1 = (int)((sq/(pow(10,d)+1e-9)));
     (p1+sq - (int)(p1*(pow(10,d)+1e-9))== k) ? printf("%d is kaprekar",k) : printf("%d isn't kaprekar",k);
 }
+//9 is kaprekar
