@@ -1,5 +1,4 @@
 #include<stdio.h>
-
 int ackerMan(int m,int n){
     if(m==0) return n+1;
     else if(n==0) return ackerMan(m-1,1);
@@ -7,15 +6,12 @@ int ackerMan(int m,int n){
 }
 
 int main(){
-    // int m,n;
-    // scanf("%d %d",&m,&n);
-    // printf("%d",ackerMan(m,n));
-    for (int i = 1; i <= 4; i++)
+    for (int i = 1; i <= 10; i++)
     {
-        for (int j = 1; j <= 10; j++)
+        for (int j = 1; j <= 3; j++)
         {
-            printf("A(%d,%d) = %ld\n",i,j,ackerMan(i,j));
+            printf("A(%d,%d)=%ld   ",j,i,ackerMan(j,i));
         }
+        printf("\n");
     }
-    
 }
