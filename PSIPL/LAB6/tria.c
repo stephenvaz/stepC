@@ -2,7 +2,7 @@
 
 int main(){
     int n;
-    printf("Enter order of matrix: ");
+    printf("Enter order of matrix (square only): ");
     scanf("%d",&n);
     int a[n][n];
     printf("Enter elements of matrix: \n");
@@ -12,33 +12,27 @@ int main(){
             scanf("%d",&a[i][j]);
         }
     }
-    // int a[][3] = {{6,0,0},
-    //               {0,10,0},
-    //               {0,0,2}};
-    int count=0,count2=0;
-    for (int i = 0; i < 3; i++)
-    {
-        for (int j = 0; j < 3; j++)
-        {
-            if(i>j){
-                if(a[i][j]==0){
-                    count++;
-                }
+    int c1 = 0, c2 = 0;
+    for (int i = 0; i < n; i++){
+        for (int j = 0; j < n; j++){
+            if(i>j && a[i][j]!=0){
+                c1 = 1;
             }
-            else if (i<j){
-                if(a[i][j]==0){
-                    count2++;
-                }
+            else if (i<j && a[i][j]!=0){
+                c2 = 1;
             }
         }
     }
-    if (count == n){
+    if (c1 == 0){
         printf("The matrix is Upper Triangular");
     }
-    else if (count2 == n){
+    else if (c2 == 0){
         printf("The matrix is Lower Triangular");
     }
     else{
         printf("None");
     }
 }
+// int a[][3] = {{6,0,0},
+    //               {0,10,0},
+    //               {0,0,2}}
