@@ -5,18 +5,22 @@ void matMulti(int n1,int m1,int n2,int m2,int a1[n1][m1],int a2[n2][m2],int a3[n
         printf("Multiplication not possible");
         return;
     }
-    for(int i=0;i<2;i++){
-        for(int j=0;j<2;j++){
+    for(int i=0;i<n1;i++){
+        for(int j=0;j<m2;j++){
             a3[i][j]=0;
-            for(int k=0;k<3;k++){
+            for(int k=0;k<n2;k++){
                 a3[i][j]+=a1[i][k]*a2[k][j];
             }
         }
     }
 }
 
-void tS(){
-
+void tS(int n1,int m1,int a1[n1][m1],int a2[m1][n1]){
+    for(int i=0;i<m1;i++){
+        for(int j=0;j<n1;j++){
+            a2[i][j]=a1[j][i];
+        }
+    }
 }
 
 void print(int n,int m, int a3[][m]){
@@ -30,7 +34,7 @@ void print(int n,int m, int a3[][m]){
 }
 void menu(){
     int c;
-    printf("\n1. Multiplication\n2. Transpose\n3. Exit\n");
+    printf("1. Multiplication\n2. Transpose\n3. Exit\n");
     scanf("%d",&c);
     switch(c)
     {
@@ -39,25 +43,43 @@ void menu(){
         int arr[4];
         for(int i = 0; i < 4; i+=2)
         {
-            printf("Enter the number of rows and columns of the matrix:-\n");
+            printf("Enter the number of rows and columns of the matrix %d:-\n",i/2+1);
             scanf("%d %d",&arr[i],&arr[i+1]);
         }
-        int a1[arr[0]][arr[1]], a2[arr[2]][arr[3]], a3[arr[0]][arr[3]];
-        for(int i =0;i <=2;i++){
-            printf("Enter the elements of the matrix:-\n");
-            for(int i=0;i<arr[2*i];i++){
-                for(int j=0;j<arr[2*j+1];j++){
-                    scanf("%d",&a1[i][j]);
+        int a1 [arr[0]] [arr[1]], a2 [arr[2]] [arr[3]], a3 [arr[0]] [arr[3]];
+        for(int i=0;i<2;i++){
+            printf("Enter the elements of matrix %d:-\n",i+1);
+            for(int j=0;j<arr[2*i];j++){
+                for(int k=0;k<arr[2*i+1];k++){
+                    printf("(%d,%d): ",j+1,k+1);
+                    (i == 0) ? scanf("%d",&a1[j][k]):scanf("%d",&a2[j][k]);
                 }
             }
         }
+        // print(arr[0],arr[1],a1);
+        // print(arr[2],arr[3],a2);
         matMulti(arr[0],arr[1],arr[2],arr[3],a1, a2, a3);
         print(arr[0],arr[3], a3);
         break;
     }
 
-    case 3:
+    case 2:
+    {
+        int n1,m1;
+        printf("Enter the number of rows and columns of the matrix :-\n");
+        scanf("%d %d",&n1,&m1);
+        int a1[n1][m1],a2[m1][n1];
+        printf("Enter the elements of matrix :-\n");
+        for(int i = 0; i < n1; i++){
+            for(int j = 0; j < m1; j++){
+                printf("(%d,%d): ",i+1,j+1);
+                scanf("%d",&a1[i][j]);
+            }
+        }
+        tS(n1,m1,a1,a2);
+        print(m1,n1,a2);
         break;
+    }
     default:
         break;
     }
