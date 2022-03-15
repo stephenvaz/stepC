@@ -2,24 +2,23 @@
 
 int main(){
     int n;
-    scanf("%d",&n);
     struct club{
         char name[20];
         int age;
         char addr[20];
-        int ms;
-        union msU
+        int ms;  // 0 or 1  1 - married 
+        struct msU
         {
             char wife[20];
             int kids;
             struct kid
             {
-                char kidn[20];
-            } ki[10];
+                char kidn[20][10];
+            } k ; 
             
         } a;
-    } data[n];
-    
+    } data[10];
+    scanf("%d",&n);
     for(int i = 0; i<n;i++){
         printf("Enter Name of Player %d: ",i+1);
         scanf("%s",data[i].name);
@@ -27,7 +26,7 @@ int main(){
         scanf("%d",&data[i].age);
         printf("Enter Address of Player %d: ",i+1);
         scanf("%s",data[i].addr);
-        printf("Enter Marital Status of Player %d (0 - Married): ",i+1);
+        printf("Enter Marital Status of Player %d (0 - unMarried): ",i+1);
         scanf("%d",&data[i].ms);
         if(data[i].ms == 1){
             printf("Enter Wife Name of Player %d: ",i+1);
@@ -37,7 +36,7 @@ int main(){
             if(data[i].a.kids > 0){
                 for (int j = 0; j<data[i].a.kids; j++){
                     printf("Enter Name of Kid %d: ",j+1);
-                    gets(data[i].a.ki[j].kidn);
+                    scanf("%s",data[i].a.k.kidn[j]);
                 }
             }
         }
@@ -52,7 +51,7 @@ int main(){
             printf(" %d",data[i].a.kids);
             if(data[i].a.kids > 0){
                 for (int j = 0; j<data[i].a.kids; j++){
-                    printf(" %s",data[i].a.ki[j].kidn);
+                    printf(" %s",data[i].a.k.kidn[j]);
                 }
             }
         }
