@@ -7,6 +7,7 @@ void swap(int *a, int *b){
 }
 
 int main(){
+    printf("Enter the number of elements: ");
     int n;
     scanf("%d",&n);
     int a[n];
@@ -16,6 +17,7 @@ int main(){
     for (int i = 0; i < n/2; i++){
         swap(&a[i],&a[n-i-1]);
     }
+    printf("Swapped:-\n");
     for(int i = 0; i < n; i++){
         printf("%d ",*(a+i));
     }

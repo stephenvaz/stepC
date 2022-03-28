@@ -7,6 +7,7 @@ void swap(int *a, int *b){
 }
 
 int main(){
+    printf("Enter the order of matrix: ");
     int n;
     scanf("%d",&n);
     int a[n][n];
@@ -25,7 +26,9 @@ int main(){
     }
     for (int i = 0; i < n/2; i++){
         for(int j = 0; j < n; j++){
-            swap(&a[i][j],&a[j][i]);
+            if(i!=j){
+                swap(&a[i][j],&a[j][i]);
+            }
         }
     }
     printf("After:-\n");

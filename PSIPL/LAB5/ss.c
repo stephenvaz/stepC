@@ -1,17 +1,17 @@
 #include<stdio.h>
 
 
-void sorter(int arr[],int len){
+void sorter(int *ar,int len){
     for(int i=0;i<len;i++){
         int temp, min = i;
         for(int j = i+1; j<len; j++){
-            if(arr[j]<arr[min]){
+            if(*(ar+j)<*(ar+min)){
                 min = j;
             }
         }
-        temp = arr[min];
-        arr[min] = arr[i];
-        arr[i] = temp;
+        temp = ar[min];
+        ar[min] = ar[i];
+        ar[i] = temp;
     }
 }
 

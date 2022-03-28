@@ -7,8 +7,10 @@ void swap(int *a, int *b){
 }
 int main(){
     int n;
+    printf("Enter the number of elements: ");
     scanf("%d",&n);
     int a[n];
+    printf("Enter the elements:-\n");
     for(int i=0;i<n;i++){
         scanf("%d",&a[i]);
     }
@@ -19,6 +21,7 @@ int main(){
         (a[max]<a[i]) ? max = i : 0;
     }
     swap(&a[min],&a[max]);
+    printf("Swapped:-\n");
     for(int i = 0; i < n; i++){
         printf("%d ",*(a+i));
     }

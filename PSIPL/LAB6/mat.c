@@ -56,8 +56,6 @@ void menu(){
                 }
             }
         }
-        // print(arr[0],arr[1],a1);
-        // print(arr[2],arr[3],a2);
         matMulti(arr[0],arr[1],arr[2],arr[3],a1, a2, a3);
         print(arr[0],arr[3], a3);
         break;
@@ -88,20 +86,6 @@ void menu(){
 
 
 int main(){
-    // int n,m;
-    // printf("Enter the number of rows and columns of the matrix:-\n");
-    // scanf("%d %d",&n,&m);
-    // int a1[2][3]={{1,2,3},{4,5,6}};
-    // int a2[3][2]={{7,8},{9,10},{11,12}};
-    // printf("Enter the elements of the matrix:-\n");
-    // for(int i=0;i<n;i++){
-    //     for(int j=0;j<m;j++){
-    //         scanf("%d",&arr[i][j]);
-    //     }
-    // }
-    // int a3[2][2];
-    
-    // matMulti(2,3,3,2,a1, a2, a3);
     menu();
     return 0;   
 

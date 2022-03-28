@@ -12,6 +12,12 @@ int main(){
             scanf("%d",&a[i][j]);
         }
     }
+    for(int i = 0; i<n;i++){
+        for(int j = 0; j<n;j++){
+            printf("%d ",a[i][j]);
+        }
+        printf("\n");
+    }
     int c1 = 0, c2 = 0;
     for (int i = 0; i < n; i++){
         for (int j = 0; j < n; j++){
@@ -24,7 +30,23 @@ int main(){
         }
     }
     if (c1 == 0){
-        printf("The matrix is Upper Triangular");
+        printf("The matrix is Upper Triangular\n");
+        for (int i = 0; i < n; i++)
+        {
+            for (int j = 0; j < n; j++)
+            {
+                if (i < j)
+                {
+                    printf(" %d ", a[i][j]);
+                }
+                else
+                {
+                    printf(" * ");
+                }
+            }
+            printf("\n");
+        }
+        
     }
     else if (c2 == 0){
         printf("The matrix is Lower Triangular");

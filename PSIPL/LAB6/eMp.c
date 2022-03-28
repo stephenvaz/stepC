@@ -11,14 +11,17 @@ int main(){
     for(int i = 0; i<n; i++){
         scanf("%d %d",&emp[i][0],&emp[i][1]);
     }
-    //Debug Print
-    // printf("The details of employees are:\n");
-    // for(int i = 0; i<n; i++){
-    //     printf("%d %d\n",emp[i][0],emp[i][1]);
-    // }
-    printf("Employee ID   Age   Retirement Year\n");
     for(int i = 0; i<n; i++){
-        printf("%d          %d        %d\n",emp[i][0],emp[i][1],cyr+(65- emp[i][1]));
+        if(emp[i][0] == -1){
+            continue;
+        }
+        printf("Year of retirement: %d\n",cyr+(65-emp[i][1]));
+        printf("List of employees:\n");
+        for (int j = i; j < n; j++){
+            if (emp[j][1] == emp[i][1]){
+                printf("%d\n",emp[j][0]);
+                emp[j][0] = -1;
+            }
+        }
     }
-
 }
