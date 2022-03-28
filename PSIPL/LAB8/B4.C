@@ -1,6 +1,6 @@
 #include<stdio.h>
 #include<string.h>
-#include<stdlib.h>
+#define clear() printf("\033[H\033[J") 
 int main(){
     int n;
     printf("Enter number of players:-\n");
@@ -39,7 +39,7 @@ int main(){
             }
         }
     }
-    system("cls");
+    clear();
     printf("Sr. No.\tName\t\tGames\tGoals\n");
     for(int i =0; i<n;i++){
         printf("  %d  ",i+1);
